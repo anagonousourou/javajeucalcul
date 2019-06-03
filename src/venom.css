@@ -1,0 +1,12 @@
+.root{
+    -fx-background-color:#383838;
+    -fx-font-size: 12pt;
+    
+}
+.label{
+    -fx-text-fill:#FFFF;
+}
+
+.button:hover{
+    -fx-background-color:#0ea816;
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>CalculJeu</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/menu.css</name>
+			<type>1</type>
+			<location>C:/Users/ANAGONOU Sourou/eclipse-workspace/CalculJeu/src/menu.css</location>
+		</link>
+		<link>
+			<name>src/sad_smiley.jpg</name>
+			<type>1</type>
+			<location>C:/Users/ANAGONOU Sourou/eclipse-workspace/CalculJeu/src/sad_smiley.jpg</location>
+		</link>
+	</linkedResources>
+</projectDescription>
