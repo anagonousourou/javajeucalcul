@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>CalculJeu</name>
+	<name>JarName</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -10,20 +10,14 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/menu.css</name>
-			<type>1</type>
-			<location>C:/Users/ANAGONOU Sourou/eclipse-workspace/CalculJeu/src/menu.css</location>
-		</link>
-		<link>
-			<name>src/sad_smiley.jpg</name>
-			<type>1</type>
-			<location>C:/Users/ANAGONOU Sourou/eclipse-workspace/CalculJeu/src/sad_smiley.jpg</location>
-		</link>
-	</linkedResources>
 </projectDescription>
