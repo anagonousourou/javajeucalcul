@@ -15,30 +15,39 @@ class BilanLayout extends VBox{
     Label remark_lab;
     Button ok_btn;
     ResultatSession resultatSession;
-    String resourcesFolder="./resources/";
+    
     String state;
-    Image excel_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"excellent.png")
+    Image excel_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"excellent.png").toExternalForm()
         ,80, 120, false, false);
-    Image goodjob_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"bon_travail.png"),
+    Image goodjob_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"bon_travail.png").toExternalForm(),
         80, 120, false, false);
-    Image still_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"angry.png"),
+    Image still_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"angry.png").toExternalForm(),
         80, 120, false, false);
-    Image good_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"smile.png"),
+    Image good_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"smile.png").toExternalForm(),
         80, 120, false, false);
-    Image verygood_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"ok_smiley.jpg"),
+    Image verygood_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"ok_smiley.jpg").toExternalForm(),
         80, 120, false, false);
-    Image noeffort_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"blue_smiley.png")
-        ,80, 120, false, false);//aucun essai
-    Image nul_im=new Image(BilanLayout.class.getResourceAsStream(resourcesFolder+"sad_smiley.jpg")
-        ,80, 120, false, false);
+    Image noeffort_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"blue_smiley.png").toExternalForm(),
+        80, 120, false, false);//aucun essai
+    Image nul_im=new Image(
+        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"sad_smiley.jpg").toExternalForm(),
+        80, 120, false, false);
     private PropertyChangeSupport support;
     BilanLayout(ResultatSession resultat){
         super(50);
-        this.getStylesheets().add("./bilan.css");
+        this.getStylesheets().add(
+            this.getClass().getResource(ResourcesInfos.CSS+"bilan.css").toExternalForm()
+        );
         support=new PropertyChangeSupport(this);
         this.resultatSession=resultat;
 		this.setAlignment(Pos.BASELINE_CENTER);
-		this.remark_lab=new Label();
+        this.remark_lab=new Label();
 		this.remark_lab.setTextOverrun(OverrunStyle.LEADING_WORD_ELLIPSIS);
 		this.remark_lab.setWrapText(true);
 		this.ok_btn=new Button("OK");
@@ -58,7 +67,6 @@ class BilanLayout extends VBox{
 		}
 		else {
 			double tmp=(double)resultatSession.getSucces()/resultatSession.getEssais();
-			System.out.println(tmp);
 			
 			if (tmp<0.3) {
 				

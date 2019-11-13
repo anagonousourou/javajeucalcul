@@ -10,10 +10,13 @@ import javafx.scene.layout.VBox;
 
 class MainMenuLayout extends VBox {
 	private PropertyChangeSupport support;
-	private String resourcesFolder="./";
+	
     MainMenuLayout(){
 		super(20);
-		this.getStylesheets().add(resourcesFolder+"menu.css");
+		;
+		this.getStylesheets().add(
+			this.getClass().getResource(ResourcesInfos.CSS+"menu.css").toExternalForm()
+		);
 		support=new PropertyChangeSupport(this);
 		this.setAlignment(Pos.BASELINE_CENTER);
 		
@@ -23,7 +26,6 @@ class MainMenuLayout extends VBox {
 		Button btn_quit=new Button("Quitter");
 		btn_quit.getStyleClass().add("btn-quit");
 		btn_quit.setOnAction(e->{
-			System.out.println("Quitter l'app");
 			support.firePropertyChange("action", "", "quitter");
 		});
 		Button btn_begin=new Button("Commencer");

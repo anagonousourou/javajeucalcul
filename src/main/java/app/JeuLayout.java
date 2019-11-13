@@ -21,23 +21,24 @@ class JeuLayout extends VBox{
     private int comptSucces=0;
     private PropertyChangeSupport support;
     private int resultat;
-    private String resourcesFolder="./";
 
     private Random rand=new Random();
     JeuLayout(){
         
         super(20);
-        this.getStylesheets().add(resourcesFolder+"venom.css");
+        this.getStylesheets().add(
+			this.getClass().getResource(ResourcesInfos.CSS+"venom.css").toExternalForm()
+		);
         support=new PropertyChangeSupport(this);
 		this.setAlignment(Pos.BASELINE_CENTER);
 		this.score_lab=new Label("0/0");
-		this.props_lab=new Label();
+        this.props_lab=new Label();
+        this.props_lab.getStyleClass().add("props_lab");
 		this.tf=new TextField();
 		this.tf.setOnKeyPressed(e->{
 			if(e.getCode()==KeyCode.ENTER) {
                 this.hasTried=true;
                 this.comptEssais++;
-				System.out.println(this.resultat+" "+tf.getText());
 				if(tf.getText().equals(String.valueOf(this.resultat))) {
 					this.comptSucces++;
 					
