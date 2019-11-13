@@ -1,0 +1,9 @@
+0 <= x < 0.3 => Ca c'est plutot nul.
+
+0.3 <= x <0.5 Allez encore un peu d'effort
+
+0.5<=x < 0.7 =>Bon travail vous pouvez faire mieux la prochaine fois.
+
+0.7<=x < 0.9 => Super travail vous etes proches de l'excellence
+
+0.9 <= x <=1 Excellent vous etes une calculatrice ambulante
