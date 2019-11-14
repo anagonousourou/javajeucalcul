@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 /**
  * @author ANAGONOU Patrick
  */
@@ -22,7 +23,7 @@ public class App extends Application implements PropertyChangeListener {
         this.win = primaryStage;
         MainMenuLayout mml = new MainMenuLayout();
         mml.addPropertyChangeListener(this);
-        primaryStage.setScene(new Scene(mml, 350, 350));
+        primaryStage.setScene(new Scene(mml, 350,250 ));
         primaryStage.show();
     }
 
@@ -32,11 +33,11 @@ public class App extends Application implements PropertyChangeListener {
         if (evt.getSource().toString().equals("Jeu")) {
             BilanLayout bl = new BilanLayout((ResultatSession) evt.getNewValue());
             bl.addPropertyChangeListener(this);
-            this.win.setScene(new Scene(bl, 350, 350));
+            this.win.setScene(new Scene(bl, 350, 250));
         } else if (evt.getSource().toString().equals("Bilan")) {
             MainMenuLayout mml = new MainMenuLayout();
             mml.addPropertyChangeListener(this);
-            this.win.setScene(new Scene(mml, 350, 350));
+            this.win.setScene(new Scene(mml, 350, 250));
             this.win.show();
         }
 
@@ -45,7 +46,7 @@ public class App extends Application implements PropertyChangeListener {
             if (newValue.equals("start")) {
                 JeuLayout jl = new JeuLayout();
                 jl.addPropertyChangeListener(this);
-                win.setScene(new Scene(jl, 350, 350));
+                win.setScene(new Scene(jl, 350, 250));
             } else if (newValue.equals("quitter")) {
                 try {
                     Platform.exit();
