@@ -11,6 +11,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
+/**
+ * @author ANAGONOU Patrick
+ */
 class BilanLayout extends VBox{
     Label remark_lab;
     Button ok_btn;
@@ -18,25 +21,22 @@ class BilanLayout extends VBox{
     
     String state;
     Image excel_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"excellent.png").toExternalForm()
+        BilanLayout.class.getResource(ResourcesInfos.EXCELLENT_IMAGE).toExternalForm()
         ,80, 120, false, false);
     Image goodjob_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"bon_travail.png").toExternalForm(),
+        BilanLayout.class.getResource(ResourcesInfos.GOOD_IMAGE).toExternalForm(),
         80, 120, false, false);
     Image still_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"angry.png").toExternalForm(),
-        80, 120, false, false);
-    Image good_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"smile.png").toExternalForm(),
+        BilanLayout.class.getResource(ResourcesInfos.MORE_EFFORT_IMAGE).toExternalForm(),
         80, 120, false, false);
     Image verygood_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"ok_smiley.jpg").toExternalForm(),
+        BilanLayout.class.getResource(ResourcesInfos.VERY_GOOD_IMAGE).toExternalForm(),
         80, 120, false, false);
     Image noeffort_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"blue_smiley.png").toExternalForm(),
+        BilanLayout.class.getResource(ResourcesInfos.NO_EFFORT_IMAGE).toExternalForm(),
         80, 120, false, false);//aucun essai
     Image nul_im=new Image(
-        BilanLayout.class.getResource(ResourcesInfos.IMAGES+"sad_smiley.jpg").toExternalForm(),
+        BilanLayout.class.getResource(ResourcesInfos.NULL_IMAGE).toExternalForm(),
         80, 120, false, false);
     private PropertyChangeSupport support;
     BilanLayout(ResultatSession resultat){
@@ -66,7 +66,7 @@ class BilanLayout extends VBox{
 			remark_lab.setGraphic(new ImageView(noeffort_im));
 		}
 		else {
-			double tmp=(double)resultatSession.getSucces()/resultatSession.getEssais();
+			double tmp=resultatSession.getScore();
 			
 			if (tmp<0.3) {
 				

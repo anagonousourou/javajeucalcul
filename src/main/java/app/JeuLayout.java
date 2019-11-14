@@ -11,9 +11,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 
+/**
+ * @author ANAGONOU Patrick
+ */
 class JeuLayout extends VBox{
-    private Label score_lab;
     private Label props_lab;
+    private CountUp timer;
     private TextField tf;
     private Button btn_finish;
     private boolean hasTried=false;
@@ -31,8 +34,8 @@ class JeuLayout extends VBox{
 		);
         support=new PropertyChangeSupport(this);
 		this.setAlignment(Pos.BASELINE_CENTER);
-		this.score_lab=new Label("0/0");
         this.props_lab=new Label();
+        this.timer=new CountUp();
         this.props_lab.getStyleClass().add("props_lab");
 		this.tf=new TextField();
 		this.tf.setOnKeyPressed(e->{
@@ -54,23 +57,22 @@ class JeuLayout extends VBox{
         });
         
 		this.proposition();
-		this.getChildren().addAll(score_lab,props_lab,tf,btn_finish);
+		this.getChildren().addAll(timer,props_lab,tf,btn_finish);
     }
     
 	
     private void finSession() {
         support.firePropertyChange(
             "resultatSession", null, 
-            new ResultatSession(this.hasTried,this.comptEssais, this.comptSucces)
+            new ResultatSession(this.hasTried,this.comptEssais, this.comptSucces,this.timer.getTime())
             );
     }
 
     private void proposition() {
-        this.score_lab.setText(this.comptSucces+"/"+this.comptEssais);
 		int a=rand.nextInt(100);
 		int b=rand.nextInt(100);
 		this.resultat=a+b;
-		this.props_lab.setText("Combien font "+String.valueOf(a)+" + "+String.valueOf(b)+ " ?");
+		this.props_lab.setText("Combien font "+a+" + "+b+ " ?");
 		
     }
     

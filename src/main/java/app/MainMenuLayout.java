@@ -8,6 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
+/**
+ * @author ANAGONOU Patrick
+ */
 class MainMenuLayout extends VBox {
 	private PropertyChangeSupport support;
 	
