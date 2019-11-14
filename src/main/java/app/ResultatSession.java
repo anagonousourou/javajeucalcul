@@ -1,14 +1,18 @@
 package app;
 
-
+/**
+ * @author ANAGONOU Patrick
+ */
 class ResultatSession{
     private final int essais;
     private final int succes;
     private final boolean hasTried;
-    ResultatSession(boolean hasTried,int essais,int succes){
+    private int tempsPasse;
+    ResultatSession(boolean hasTried,int essais,int succes,int tempsPasse){
         this.hasTried=hasTried;
         this.essais=essais;
         this.succes=succes;
+        this.tempsPasse=tempsPasse;
 
     }
 
@@ -23,5 +27,11 @@ class ResultatSession{
 
     public boolean isHasTried() {
         return hasTried;
+    }
+
+    public double getScore(){
+        
+        return ((double)succes/(tempsPasse/6));
+
     }
 }
