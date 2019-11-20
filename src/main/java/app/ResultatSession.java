@@ -31,7 +31,7 @@ class ResultatSession{
 
     public double getScore(){
         
-        return ((double)succes/(tempsPasse/6));
+        return ((double)succes/(tempsPasse/10));
 
     }
 }
